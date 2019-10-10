@@ -10,6 +10,8 @@ library(lubridate)
 # library(data.table)
 ```
 
+NOTE - Please replace Assginment #3 grade for data import / cleaning with this assignment
+
 ## Goal
 Predict if a Telco (e.g. Comcast, AT&T) customer will churn (stop subscribing) from some customer information and details about their subscriptions.
 

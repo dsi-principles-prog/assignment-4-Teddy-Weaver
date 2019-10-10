@@ -3,6 +3,8 @@ title: "assign4"
 output: html_notebook
 ---
 
+NOTE - Please replace Assginment #3 grade for data import / cleaning with this assignment
+
 For the regular expression exercises, try writing first using regular expressions directly, then try using rverbalexpressions. Provide the code for both. 
 
 ```{r}
