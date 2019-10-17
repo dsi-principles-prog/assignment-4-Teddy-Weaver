@@ -61,10 +61,8 @@ dirty_df <-dirty_df %>%
 
 Assert - Check all columns for NA values
 ```{r check_na}
-for(col_name in names(dirty_df)) {
-  dirty_df %>% 
-    assert(not_na, col_name)
-}
+dirty_df %>% 
+    assert(not_na, everything())
 
 # There are a few records were total charges is NA.
 # This occurs when the tenure = 0, so for new subscribers only.
@@ -73,7 +71,7 @@ for(col_name in names(dirty_df)) {
 
 Update total_charges to be 0 instead of NA, when the tenure is 0 months.
 ```{r update_total_charges}
-# Create temporary df and check to make sure total charges matches between data frames
+# Create temporary df and check to make sure total charges matches between data frames.
 tmp_df <- dirty_df %>% 
   mutate(total_charges = ifelse(tenure == 0, 0, total_charges))
 

@@ -1750,8 +1750,139 @@ summary {
 
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShnbHVlKVxuYGBgIn0= -->
+<pre class="r"><code>library(glue)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="count-of-services" class="section level2">
+<h2>Count of Services</h2>
+<p>The current data structure does not make it easy to understand how many services a customer is subscribed to. They are a mixture of logical and string fields with different values. The thought is that the more services someone subscribe to, the more resistant they might be to cancel/churn. Thought: The more services one subscribes to, the less likely they are to churn.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuc2VyaXZjZV9jb2x1bW5zIDwtIGMoXCJwaG9uZV9zZXJ2aWNlXCIsIFwiaW50ZXJuZXRfc2VydmljZVwiLCBcIm9ubGluZV9zZWN1cml0eVwiLCBcIm9ubGluZV9iYWNrdXBcIiwgXG4gICAgICAgICAgICAgICAgICAgICBcImRldmljZV9wcm90ZWN0aW9uXCIsIFwidGVjaF9zdXBwb3J0XCIsIFwic3RyZWFtaW5nX3R2XCIsIFwic3RyZWFtaW5nX21vdmllc1wiKVxuXG5zZXJ2aWNlX2NvdW50IDwtIGZ1bmN0aW9uKGRmLCBjb2xfdmVjdG9yKSB7XG4gIGNvbHVtbl9jaGVjayA8LSBpZmVsc2UoY29sX3ZlY3RvciAlaW4lIG5hbWVzKGRmKSxUUlVFLCBGQUxTRSlcbiAgXG4gIGlmKEZBTFNFICVpbiUgY29sdW1uX2NoZWNrKSB7XG4gICAgYmFkX2NvbHVtbnMgPC0gcGFzdGUoY29sX3ZlY3RvclshY29sdW1uX2NoZWNrXSxjb2xsYXBzZT1cIiwgXCIpXG4gICAgc3RvcChnbHVlKFwiRXJyb3IgLSBUaGUgZm9sbG93aW5nIGNvbHVtbihzKSB3ZXJlIG5vdCBmb3VuZCBpbiB0aGUgZGF0YSBmcmFtZTpcXG4ge2JhZF9jb2x1bW5zfVwiKSlcbiAgfVxuICBcbiAgZGYgJT4lIFxuICAgIG11dGF0ZShcbiAgICAgIHRtcF9pbnRlcm5ldF9zZXJ2aWNlID0gaWZlbHNlKCFpbnRlcm5ldF9zZXJ2aWNlID09IFwibm9cIiwgMSwgMCksXG4gICAgICB0bXBfb25saW5lX3NlY3VyaXR5ID0gaWZlbHNlKG9ubGluZV9zZWN1cml0eSA9PSBcInllc1wiLCAxLCAwKSwgXG4gICAgICB0bXBfb25saW5lX2JhY2t1cCA9IGlmZWxzZShvbmxpbmVfYmFja3VwID09IFwieWVzXCIsIDEsIDApLCBcbiAgICAgIHRtcF9kZXZpY2VfcHJvdGVjdGlvbiA9IGlmZWxzZShkZXZpY2VfcHJvdGVjdGlvbiA9PSBcInllc1wiLCAxLCAwKSxcbiAgICAgIHRtcF90ZWNoX3N1cHBvcnQgPSBpZmVsc2UodGVjaF9zdXBwb3J0ID09IFwieWVzXCIsIDEsIDApLFxuICAgICAgdG1wX3N0cmVhbWluZ190diA9IGlmZWxzZShzdHJlYW1pbmdfdHYgPT0gXCJ5ZXNcIiwgMSwgMCksXG4gICAgICB0bXBfc3RyZWFtaW5nX21vdmllcyA9IGlmZWxzZShzdHJlYW1pbmdfbW92aWVzID09IFwieWVzXCIsIDEsIDApKSAlPiUgXG4gICAgbXV0YXRlKGNvdW50X3NlcnZpY2VzID0gcm93U3VtcyguW2dyZXAoXCJedG1wfF5waG9uZV9zZXJ2aWNlJFwiLCBuYW1lcyguKSldKSkgJT4lIFxuICAgIHNlbGVjdChldmVyeXRoaW5nKCksIC1ncmVwKFwiXnRtcFwiLCBuYW1lcyguKSkpXG59XG5cbiMgRXhlY3V0aW5nIEZ1bmN0aW9uXG50ZWxjb19jaHVybl9jbGVhbiA8LSBzZXJ2aWNlX2NvdW50KHRlbGNvX2NodXJuX2NsZWFuLCBzZXJpdmNlX2NvbHVtbnMpXG5cbiMgVGVzdCAtIFZhbHVlIFdpdGhpbiBFeHBlY3RlZCBSYW5nZVxudGVsY29fY2h1cm5fY2xlYW4gJT4lIFxuICBhc3NlcnQod2l0aGluX2JvdW5kcygxLCA4KSwgY291bnRfc2VydmljZXMpXG5gYGAifQ== -->
+<pre class="r"><code>serivce_columns &lt;- c(&quot;phone_service&quot;, &quot;internet_service&quot;, &quot;online_security&quot;, &quot;online_backup&quot;, 
+                     &quot;device_protection&quot;, &quot;tech_support&quot;, &quot;streaming_tv&quot;, &quot;streaming_movies&quot;)
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiMzAtZmVhdHVyZS1lbmdpbmVlcmluZyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQoK</div>
+service_count &lt;- function(df, col_vector) {
+  column_check &lt;- ifelse(col_vector %in% names(df),TRUE, FALSE)
+  
+  if(FALSE %in% column_check) {
+    bad_columns &lt;- paste(col_vector[!column_check],collapse=&quot;, &quot;)
+    stop(glue(&quot;Error - The following column(s) were not found in the data frame:\n {bad_columns}&quot;))
+  }
+  
+  df %&gt;% 
+    mutate(
+      tmp_internet_service = ifelse(!internet_service == &quot;no&quot;, 1, 0),
+      tmp_online_security = ifelse(online_security == &quot;yes&quot;, 1, 0), 
+      tmp_online_backup = ifelse(online_backup == &quot;yes&quot;, 1, 0), 
+      tmp_device_protection = ifelse(device_protection == &quot;yes&quot;, 1, 0),
+      tmp_tech_support = ifelse(tech_support == &quot;yes&quot;, 1, 0),
+      tmp_streaming_tv = ifelse(streaming_tv == &quot;yes&quot;, 1, 0),
+      tmp_streaming_movies = ifelse(streaming_movies == &quot;yes&quot;, 1, 0)) %&gt;% 
+    mutate(count_services = rowSums(.[grep(&quot;^tmp|^phone_service$&quot;, names(.))])) %&gt;% 
+    select(everything(), -grep(&quot;^tmp&quot;, names(.)))
+}
+
+# Executing Function
+telco_churn_clean &lt;- service_count(telco_churn_clean, serivce_columns)
+
+# Test - Value Within Expected Range
+telco_churn_clean %&gt;% 
+  assert(within_bounds(1, 8), count_services)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="percent-of-available-services-subscribed" class="section level2">
+<h2>Percent of Available Services Subscribed</h2>
+<p>Of the possible services offered, what percentage did the customer subscribe to. If they subscribe to interent, there are 8 possible services. If they do not subscribe to interent, there are only 2 possible services (phone, internet). Thought: The more services one subscribes to, the less likely they would be to churn. <strong>Note</strong> - This makes the assumption that every customer had the option of an internet subscription.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGVyY2VudF9zZXJ2aWNlc19zdWJzY3JpYmVkIDwtIGZ1bmN0aW9uKGRmLCBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwaG9uZSA9IHBob25lX3NlcnZpY2UsIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGludGVybmV0ID0gaW50ZXJuZXRfc2VydmljZSwgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY291bnRfc2VydmljZSA9IGNvdW50X3NlcnZpY2VzKSB7XG4gIGRmICU+JSBcbiAgICBtdXRhdGUocGVyY19zZXJ2aWNlc19zdWJzY3JpYmVkID0ge3tjb3VudF9zZXJ2aWNlfX0gLyBcbiAgICAgICAgICAgICBpZmVsc2UoIXt7aW50ZXJuZXR9fSA9PSBcIm5vXCIsIDgsIDIpKVxufVxuXG4jIEV4ZWN1dGluZyBGdW5jdGlvblxudGVsY29fY2h1cm5fY2xlYW4gPC0gcGVyY2VudF9zZXJ2aWNlc19zdWJzY3JpYmVkKHRlbGNvX2NodXJuX2NsZWFuLCBwaG9uZV9zZXJ2aWNlLCBpbnRlcm5ldF9zZXJ2aWNlLCBjb3VudF9zZXJ2aWNlcylcblxuIyBUZXN0IDEgLS0gRGlkIHN1YnNjcmliZSB0byBpbnRlcm5ldC4gRWlnaHQgcG9zc2libGUgc3Vic2NyaXB0aW9uc1xudGVsY29fY2h1cm5fY2xlYW4gJT4lIFxuICBmaWx0ZXIoIWludGVybmV0X3NlcnZpY2UgPT0gXCJub1wiKSAlPiVcbiAgICBhc3NlcnQoaW5fc2V0KC4xMjUsIC4yNSwgLjM3NSwgLjUsIC42MjUsIC43NSwgLjg3NSwgMSksIHBlcmNfc2VydmljZXNfc3Vic2NyaWJlZClcblxuIyBUZXN0IDIgLS0gRGlkIG5vdCBzdWJzY3JpYmUgdG8gaW50ZXJuZXQuIE9ubHkgdHdvIHBvc3NpYmxlIHN1YnNjcmlwdGlvbnNcbnRlbGNvX2NodXJuX2NsZWFuICU+JSBcbiAgZmlsdGVyKGludGVybmV0X3NlcnZpY2UgPT0gXCJub1wiKSAlPiVcbiAgICBhc3NlcnQoaW5fc2V0KC41LCAxKSwgcGVyY19zZXJ2aWNlc19zdWJzY3JpYmVkKVxuYGBgIn0= -->
+<pre class="r"><code>percent_services_subscribed &lt;- function(df, 
+                                        phone = phone_service, 
+                                        internet = internet_service, 
+                                        count_service = count_services) {
+  df %&gt;% 
+    mutate(perc_services_subscribed = {{count_service}} / 
+             ifelse(!{{internet}} == &quot;no&quot;, 8, 2))
+}
+
+# Executing Function
+telco_churn_clean &lt;- percent_services_subscribed(telco_churn_clean, phone_service, internet_service, count_services)
+
+# Test 1 -- Did subscribe to internet. Eight possible subscriptions
+telco_churn_clean %&gt;% 
+  filter(!internet_service == &quot;no&quot;) %&gt;%
+    assert(in_set(.125, .25, .375, .5, .625, .75, .875, 1), perc_services_subscribed)
+
+# Test 2 -- Did not subscribe to internet. Only two possible subscriptions
+telco_churn_clean %&gt;% 
+  filter(internet_service == &quot;no&quot;) %&gt;%
+    assert(in_set(.5, 1), perc_services_subscribed)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="only-phone-or-internet" class="section level2">
+<h2>Only Phone or Internet</h2>
+<p>Identify whether or not someone subscribes to only phone, only internet (incl. other internet services), or both phone and internet. Thought: As home phone service is less common these days, does this make a customer less likely to churn?</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucGhvbmVfb3JfaW50ZXJuZXQgPC0gZnVuY3Rpb24oZGYsIHBob25lX2NvbCwgaW50ZXJuZXRfY29sKSB7XG4gIGRmIDwtIGRmICU+JSBcbiAgZ3JvdXBfYnkoe3twaG9uZV9jb2x9fSwge3tpbnRlcm5ldF9jb2x9fSkgJT4lIFxuICBtdXRhdGUocGhvbmVfb3JfaW50ZXJuZXQgPSBpZmVsc2Uoe3twaG9uZV9jb2x9fSA9PSBUUlVFICYge3tpbnRlcm5ldF9jb2x9fSA9PSBcIm5vXCIsIFwicGhvbmVcIixcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGlmZWxzZSh7e3Bob25lX2NvbH19ID09IEZBTFNFICYgIXt7aW50ZXJuZXRfY29sfX09PSBcIm5vXCIsIFwiaW50ZXJuZXRcIiwgXCJib3RoXCIpKSkgJT4lIFxuICB1bmdyb3VwKClcbiAgXG4gIGRmJHBob25lX29yX2ludGVybmV0IDwtIGFzLmZhY3RvcihkZiRwaG9uZV9vcl9pbnRlcm5ldClcbiAgXG4gIHJldHVybihkZilcbn1cblxuIyBFeGVjdXRpbmcgRnVuY3Rpb25cbnRlbGNvX2NodXJuX2NsZWFuIDwtICBwaG9uZV9vcl9pbnRlcm5ldCh0ZWxjb19jaHVybl9jbGVhbiwgcGhvbmVfc2VydmljZSwgaW50ZXJuZXRfc2VydmljZSlcblxuXG4jIFRlc3QgLS0gVmFsdWVzIGluIGV4cGVjdGVkIHNldC5cbnRlbGNvX2NodXJuX2NsZWFuICU+JSBcbiAgYXNzZXJ0KGluX3NldChcInBob25lXCIsIFwiaW50ZXJuZXRcIiwgXCJib3RoXCIpLCBwaG9uZV9vcl9pbnRlcm5ldClcblxuYGBgIn0= -->
+<pre class="r"><code>phone_or_internet &lt;- function(df, phone_col, internet_col) {
+  df &lt;- df %&gt;% 
+  group_by({{phone_col}}, {{internet_col}}) %&gt;% 
+  mutate(phone_or_internet = ifelse({{phone_col}} == TRUE &amp; {{internet_col}} == &quot;no&quot;, &quot;phone&quot;,
+                                    ifelse({{phone_col}} == FALSE &amp; !{{internet_col}}== &quot;no&quot;, &quot;internet&quot;, &quot;both&quot;))) %&gt;% 
+  ungroup()
+  
+  df$phone_or_internet &lt;- as.factor(df$phone_or_internet)
+  
+  return(df)
+}
+
+# Executing Function
+telco_churn_clean &lt;-  phone_or_internet(telco_churn_clean, phone_service, internet_service)
+
+
+# Test -- Values in expected set.
+telco_churn_clean %&gt;% 
+  assert(in_set(&quot;phone&quot;, &quot;internet&quot;, &quot;both&quot;), phone_or_internet)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="monthly-charge-per-service" class="section level2">
+<h2>Monthly Charge Per Service</h2>
+<p>The average monthly charge for each service subscribed (monthy_charge / count_services). Thought: A customer with a higher cost per service might be more likely to churn.</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuIyBOb3RlIC0gRG9uZSBhcyBhIHNjb3BlZCBtdXRhdGUgdG8gc2hvdyB0aGF0IEkgY2FuLiBJbXBsZW1lbnRhdGlvbiB0aGF0IG1ha2VzIHRoZSBtb3N0IHNlbnNlIGlzIHByb2JhYmx5IHNpbWlsYXIgdG8gdGhlIG90aGVyIGZlYXR1cmUgZW5naW5lZXJpbmcgZnVuY3Rpb25zLlxuXG5yYXRpbyA8LSBmdW5jdGlvbihudW0sIGRlbm9tKSAobnVtIC8gZGVub20pXG5cbiMgRXhlY3V0aW5nIEZ1bmN0aW9uXG50ZWxjb19jaHVybl9jbGVhbiA8LSB0ZWxjb19jaHVybl9jbGVhbiAlPiUgXG4gIG11dGF0ZV9hdChjKFwibW9udGhseV9jaGFyZ2VzXCIpLCBsaXN0KG1vbnRobHlfY2hhcmdlX3Blcl9zZXJ2aWNlID0gcmF0aW8pLCBkZW5vbSA9IHRlbGNvX2NodXJuX2NsZWFuJGNvdW50X3NlcnZpY2VzKSAlPiUgXG4gIG11dGF0ZShtb250aGx5X2NoYXJnZV9wZXJfc2VydmljZSA9IHJvdW5kKG1vbnRobHlfY2hhcmdlX3Blcl9zZXJ2aWNlLDIpKVxuYGBgIn0= -->
+<pre class="r"><code># Note - Done as a scoped mutate to show that I can. Implementation that makes the most sense is probably similar to the other feature engineering functions.
+
+ratio &lt;- function(num, denom) (num / denom)
+
+# Executing Function
+telco_churn_clean &lt;- telco_churn_clean %&gt;% 
+  mutate_at(c(&quot;monthly_charges&quot;), list(monthly_charge_per_service = ratio), denom = telco_churn_clean$count_services) %&gt;% 
+  mutate(monthly_charge_per_service = round(monthly_charge_per_service,2))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="preparing-for-modeling" class="section level2">
+<h2>Preparing for Modeling</h2>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-chunk-end -->
+</div>
+
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiMzAtZmVhdHVyZS1lbmdpbmVlcmluZyIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KbGlicmFyeShnbHVlKQpgYGAKCgojIyBDb3VudCBvZiBTZXJ2aWNlcwpUaGUgY3VycmVudCBkYXRhIHN0cnVjdHVyZSBkb2VzIG5vdCBtYWtlIGl0IGVhc3kgdG8gdW5kZXJzdGFuZCBob3cgbWFueSBzZXJ2aWNlcyBhIGN1c3RvbWVyIGlzIHN1YnNjcmliZWQgdG8uIFRoZXkgYXJlIGEgbWl4dHVyZSBvZiBsb2dpY2FsIGFuZCBzdHJpbmcgZmllbGRzIHdpdGggZGlmZmVyZW50IHZhbHVlcy4gVGhlIHRob3VnaHQgaXMgdGhhdCB0aGUgbW9yZSBzZXJ2aWNlcyBzb21lb25lIHN1YnNjcmliZSB0bywgdGhlIG1vcmUgcmVzaXN0YW50IHRoZXkgbWlnaHQgYmUgdG8gY2FuY2VsL2NodXJuLgpUaG91Z2h0OiBUaGUgbW9yZSBzZXJ2aWNlcyBvbmUgc3Vic2NyaWJlcyB0bywgdGhlIGxlc3MgbGlrZWx5IHRoZXkgYXJlIHRvIGNodXJuLgpgYGB7cn0Kc2VyaXZjZV9jb2x1bW5zIDwtIGMoInBob25lX3NlcnZpY2UiLCAiaW50ZXJuZXRfc2VydmljZSIsICJvbmxpbmVfc2VjdXJpdHkiLCAib25saW5lX2JhY2t1cCIsIAogICAgICAgICAgICAgICAgICAgICAiZGV2aWNlX3Byb3RlY3Rpb24iLCAidGVjaF9zdXBwb3J0IiwgInN0cmVhbWluZ190diIsICJzdHJlYW1pbmdfbW92aWVzIikKCnNlcnZpY2VfY291bnQgPC0gZnVuY3Rpb24oZGYsIGNvbF92ZWN0b3IpIHsKICBjb2x1bW5fY2hlY2sgPC0gaWZlbHNlKGNvbF92ZWN0b3IgJWluJSBuYW1lcyhkZiksVFJVRSwgRkFMU0UpCiAgCiAgaWYoRkFMU0UgJWluJSBjb2x1bW5fY2hlY2spIHsKICAgIGJhZF9jb2x1bW5zIDwtIHBhc3RlKGNvbF92ZWN0b3JbIWNvbHVtbl9jaGVja10sY29sbGFwc2U9IiwgIikKICAgIHN0b3AoZ2x1ZSgiRXJyb3IgLSBUaGUgZm9sbG93aW5nIGNvbHVtbihzKSB3ZXJlIG5vdCBmb3VuZCBpbiB0aGUgZGF0YSBmcmFtZTpcbiB7YmFkX2NvbHVtbnN9IikpCiAgfQogIAogIGRmICU+JSAKICAgIG11dGF0ZSgKICAgICAgdG1wX2ludGVybmV0X3NlcnZpY2UgPSBpZmVsc2UoIWludGVybmV0X3NlcnZpY2UgPT0gIm5vIiwgMSwgMCksCiAgICAgIHRtcF9vbmxpbmVfc2VjdXJpdHkgPSBpZmVsc2Uob25saW5lX3NlY3VyaXR5ID09ICJ5ZXMiLCAxLCAwKSwgCiAgICAgIHRtcF9vbmxpbmVfYmFja3VwID0gaWZlbHNlKG9ubGluZV9iYWNrdXAgPT0gInllcyIsIDEsIDApLCAKICAgICAgdG1wX2RldmljZV9wcm90ZWN0aW9uID0gaWZlbHNlKGRldmljZV9wcm90ZWN0aW9uID09ICJ5ZXMiLCAxLCAwKSwKICAgICAgdG1wX3RlY2hfc3VwcG9ydCA9IGlmZWxzZSh0ZWNoX3N1cHBvcnQgPT0gInllcyIsIDEsIDApLAogICAgICB0bXBfc3RyZWFtaW5nX3R2ID0gaWZlbHNlKHN0cmVhbWluZ190diA9PSAieWVzIiwgMSwgMCksCiAgICAgIHRtcF9zdHJlYW1pbmdfbW92aWVzID0gaWZlbHNlKHN0cmVhbWluZ19tb3ZpZXMgPT0gInllcyIsIDEsIDApKSAlPiUgCiAgICBtdXRhdGUoY291bnRfc2VydmljZXMgPSByb3dTdW1zKC5bZ3JlcCgiXnRtcHxecGhvbmVfc2VydmljZSQiLCBuYW1lcyguKSldKSkgJT4lIAogICAgc2VsZWN0KGV2ZXJ5dGhpbmcoKSwgLWdyZXAoIl50bXAiLCBuYW1lcyguKSkpCn0KCiMgRXhlY3V0aW5nIEZ1bmN0aW9uCnRlbGNvX2NodXJuX2NsZWFuIDwtIHNlcnZpY2VfY291bnQodGVsY29fY2h1cm5fY2xlYW4sIHNlcml2Y2VfY29sdW1ucykKCiMgVGVzdCAtIFZhbHVlIFdpdGhpbiBFeHBlY3RlZCBSYW5nZQp0ZWxjb19jaHVybl9jbGVhbiAlPiUgCiAgYXNzZXJ0KHdpdGhpbl9ib3VuZHMoMSwgOCksIGNvdW50X3NlcnZpY2VzKQpgYGAKCgojIyBQZXJjZW50IG9mIEF2YWlsYWJsZSBTZXJ2aWNlcyBTdWJzY3JpYmVkCk9mIHRoZSBwb3NzaWJsZSBzZXJ2aWNlcyBvZmZlcmVkLCB3aGF0IHBlcmNlbnRhZ2UgZGlkIHRoZSBjdXN0b21lciBzdWJzY3JpYmUgdG8uIElmIHRoZXkgc3Vic2NyaWJlIHRvIGludGVyZW50LCB0aGVyZSBhcmUgOCBwb3NzaWJsZSBzZXJ2aWNlcy4gSWYgdGhleSBkbyBub3Qgc3Vic2NyaWJlIHRvIGludGVyZW50LCB0aGVyZSBhcmUgb25seSAyIHBvc3NpYmxlIHNlcnZpY2VzIChwaG9uZSwgaW50ZXJuZXQpLgpUaG91Z2h0OiBUaGUgbW9yZSBzZXJ2aWNlcyBvbmUgc3Vic2NyaWJlcyB0bywgdGhlIGxlc3MgbGlrZWx5IHRoZXkgd291bGQgYmUgdG8gY2h1cm4uCl9fTm90ZV9fIC0gVGhpcyBtYWtlcyB0aGUgYXNzdW1wdGlvbiB0aGF0IGV2ZXJ5IGN1c3RvbWVyIGhhZCB0aGUgb3B0aW9uIG9mIGFuIGludGVybmV0IHN1YnNjcmlwdGlvbi4KYGBge3J9CnBlcmNlbnRfc2VydmljZXNfc3Vic2NyaWJlZCA8LSBmdW5jdGlvbihkZiwgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwaG9uZSA9IHBob25lX3NlcnZpY2UsIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgaW50ZXJuZXQgPSBpbnRlcm5ldF9zZXJ2aWNlLCAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNvdW50X3NlcnZpY2UgPSBjb3VudF9zZXJ2aWNlcykgewogIGRmICU+JSAKICAgIG11dGF0ZShwZXJjX3NlcnZpY2VzX3N1YnNjcmliZWQgPSB7e2NvdW50X3NlcnZpY2V9fSAvIAogICAgICAgICAgICAgaWZlbHNlKCF7e2ludGVybmV0fX0gPT0gIm5vIiwgOCwgMikpCn0KCiMgRXhlY3V0aW5nIEZ1bmN0aW9uCnRlbGNvX2NodXJuX2NsZWFuIDwtIHBlcmNlbnRfc2VydmljZXNfc3Vic2NyaWJlZCh0ZWxjb19jaHVybl9jbGVhbiwgcGhvbmVfc2VydmljZSwgaW50ZXJuZXRfc2VydmljZSwgY291bnRfc2VydmljZXMpCgojIFRlc3QgMSAtLSBEaWQgc3Vic2NyaWJlIHRvIGludGVybmV0LiBFaWdodCBwb3NzaWJsZSBzdWJzY3JpcHRpb25zCnRlbGNvX2NodXJuX2NsZWFuICU+JSAKICBmaWx0ZXIoIWludGVybmV0X3NlcnZpY2UgPT0gIm5vIikgJT4lCiAgICBhc3NlcnQoaW5fc2V0KC4xMjUsIC4yNSwgLjM3NSwgLjUsIC42MjUsIC43NSwgLjg3NSwgMSksIHBlcmNfc2VydmljZXNfc3Vic2NyaWJlZCkKCiMgVGVzdCAyIC0tIERpZCBub3Qgc3Vic2NyaWJlIHRvIGludGVybmV0LiBPbmx5IHR3byBwb3NzaWJsZSBzdWJzY3JpcHRpb25zCnRlbGNvX2NodXJuX2NsZWFuICU+JSAKICBmaWx0ZXIoaW50ZXJuZXRfc2VydmljZSA9PSAibm8iKSAlPiUKICAgIGFzc2VydChpbl9zZXQoLjUsIDEpLCBwZXJjX3NlcnZpY2VzX3N1YnNjcmliZWQpCmBgYAoKCiMjIE9ubHkgUGhvbmUgb3IgSW50ZXJuZXQKSWRlbnRpZnkgd2hldGhlciBvciBub3Qgc29tZW9uZSBzdWJzY3JpYmVzIHRvIG9ubHkgcGhvbmUsIG9ubHkgaW50ZXJuZXQgKGluY2wuIG90aGVyIGludGVybmV0IHNlcnZpY2VzKSwgb3IgYm90aCBwaG9uZSBhbmQgaW50ZXJuZXQuClRob3VnaHQ6IEFzIGhvbWUgcGhvbmUgc2VydmljZSBpcyBsZXNzIGNvbW1vbiB0aGVzZSBkYXlzLCBkb2VzIHRoaXMgbWFrZSBhIGN1c3RvbWVyIGxlc3MgbGlrZWx5IHRvIGNodXJuPwpgYGB7cn0KcGhvbmVfb3JfaW50ZXJuZXQgPC0gZnVuY3Rpb24oZGYsIHBob25lX2NvbCwgaW50ZXJuZXRfY29sKSB7CiAgZGYgPC0gZGYgJT4lIAogIGdyb3VwX2J5KHt7cGhvbmVfY29sfX0sIHt7aW50ZXJuZXRfY29sfX0pICU+JSAKICBtdXRhdGUocGhvbmVfb3JfaW50ZXJuZXQgPSBpZmVsc2Uoe3twaG9uZV9jb2x9fSA9PSBUUlVFICYge3tpbnRlcm5ldF9jb2x9fSA9PSAibm8iLCAicGhvbmUiLAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBpZmVsc2Uoe3twaG9uZV9jb2x9fSA9PSBGQUxTRSAmICF7e2ludGVybmV0X2NvbH19PT0gIm5vIiwgImludGVybmV0IiwgImJvdGgiKSkpICU+JSAKICB1bmdyb3VwKCkKICAKICBkZiRwaG9uZV9vcl9pbnRlcm5ldCA8LSBhcy5mYWN0b3IoZGYkcGhvbmVfb3JfaW50ZXJuZXQpCiAgCiAgcmV0dXJuKGRmKQp9CgojIEV4ZWN1dGluZyBGdW5jdGlvbgp0ZWxjb19jaHVybl9jbGVhbiA8LSAgcGhvbmVfb3JfaW50ZXJuZXQodGVsY29fY2h1cm5fY2xlYW4sIHBob25lX3NlcnZpY2UsIGludGVybmV0X3NlcnZpY2UpCgoKIyBUZXN0IC0tIFZhbHVlcyBpbiBleHBlY3RlZCBzZXQuCnRlbGNvX2NodXJuX2NsZWFuICU+JSAKICBhc3NlcnQoaW5fc2V0KCJwaG9uZSIsICJpbnRlcm5ldCIsICJib3RoIiksIHBob25lX29yX2ludGVybmV0KQoKYGBgCgoKIyMgTW9udGhseSBDaGFyZ2UgUGVyIFNlcnZpY2UKVGhlIGF2ZXJhZ2UgbW9udGhseSBjaGFyZ2UgZm9yIGVhY2ggc2VydmljZSBzdWJzY3JpYmVkIChtb250aHlfY2hhcmdlIC8gY291bnRfc2VydmljZXMpLgpUaG91Z2h0OiBBIGN1c3RvbWVyIHdpdGggYSBoaWdoZXIgY29zdCBwZXIgc2VydmljZSBtaWdodCBiZSBtb3JlIGxpa2VseSB0byBjaHVybi4KYGBge3J9CiMgTm90ZSAtIERvbmUgYXMgYSBzY29wZWQgbXV0YXRlIHRvIHNob3cgdGhhdCBJIGNhbi4gSW1wbGVtZW50YXRpb24gdGhhdCBtYWtlcyB0aGUgbW9zdCBzZW5zZSBpcyBwcm9iYWJseSBzaW1pbGFyIHRvIHRoZSBvdGhlciBmZWF0dXJlIGVuZ2luZWVyaW5nIGZ1bmN0aW9ucy4KCnJhdGlvIDwtIGZ1bmN0aW9uKG51bSwgZGVub20pIChudW0gLyBkZW5vbSkKCiMgRXhlY3V0aW5nIEZ1bmN0aW9uCnRlbGNvX2NodXJuX2NsZWFuIDwtIHRlbGNvX2NodXJuX2NsZWFuICU+JSAKICBtdXRhdGVfYXQoYygibW9udGhseV9jaGFyZ2VzIiksIGxpc3QobW9udGhseV9jaGFyZ2VfcGVyX3NlcnZpY2UgPSByYXRpbyksIGRlbm9tID0gdGVsY29fY2h1cm5fY2xlYW4kY291bnRfc2VydmljZXMpICU+JSAKICBtdXRhdGUobW9udGhseV9jaGFyZ2VfcGVyX3NlcnZpY2UgPSByb3VuZChtb250aGx5X2NoYXJnZV9wZXJfc2VydmljZSwyKSkKYGBgCgoKIyMgUHJlcGFyaW5nIGZvciBNb2RlbGluZwpgYGB7cn0KdGVsY29fY2h1cm5fY2xlYW4gPC0gdGVsY29fY2h1cm5fY2xlYW4gJT4lIAogIHNlbGVjdChjaHVybiwgZXZlcnl0aGluZygpKQpgYGA=</div>
 
 
 
@@ -1798,7 +1929,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeSourceEmbed("30-feature-engineerings.Rmd");
+  window.initializeSourceEmbed("30-feature-engineering.Rmd");
   window.initializeCodeFolding("show" === "show");
 });
 </script>
