@@ -20,7 +20,7 @@ The 'churn' column indicates whether or not the respective customer has stopped 
 ## About the Data:
 Each row is a customer that has or has not churned (churn = yes or no) in the last month. There are some demographic attributes but most of the data is related to the customer's subscription. This include services, contract type, billing method, tenure (length of time subscribed), monthly charges, and total charges.
 
-Non-character columns are factors. Asserting for explicit values below as new or changed values may indicate different categorizations. This may affect prediction model accuracy.
+A number of fields (e.g. senior_citizen, dependents) are converted to Logical from numeric or character during the import process.
 
 Data Source (originally provided by IBM): https://www.kaggle.com/blastchar/telco-customer-churn
 
